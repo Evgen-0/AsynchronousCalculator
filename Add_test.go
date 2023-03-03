@@ -15,9 +15,10 @@ func TestAdd(t *testing.T) {
 	t.Run("Bad", func(t *testing.T) {
 		t.Parallel()
 		expression := "10+k"
-		result := Add(expression)
-		if result == 0 {
-
+		realResult := Add(expression)
+		result := 0
+		if realResult != result {
+			t.Errorf("expected realResult: %d != %d real realResult", realResult, result)
 		}
 	})
 	t.Run("panic", func(t *testing.T) {
