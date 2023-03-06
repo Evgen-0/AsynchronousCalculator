@@ -22,7 +22,6 @@ func NoName(txt string) int {
 	var expr1 string
 	var expr2 string
 	var res int
-	var err error
 	resArrPlus := strings.Split(txt, "+")
 	resArrMinus := strings.Split(txt, "-")
 	if len(resArrPlus) == 2 {
@@ -35,11 +34,6 @@ func NoName(txt string) int {
 		expr2 = resArrMinus[1]
 		res = Minus(expr1, expr2)
 	}
-	if err != nil {
-		err := fmt.Errorf("помилка")
-		fmt.Println(err)
-		return 0
-	}
 	return res
 }
 
@@ -49,7 +43,6 @@ func Minus(expr1, expr2 string) int {
 }
 
 func Add(expr1 string, expr2 string) int {
-	//TODO Переписати так щоб можна було необмежену кількість пераметрів передавати з одним знаком.
 	res1, res2 := ToInt(expr1, expr2)
 	return res1 + res2
 }
